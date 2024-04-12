@@ -34,11 +34,6 @@ $videoList = $pdo->query('SELECT * FROM videos;')->fetchAll(PDO::FETCH_ASSOC);
 
     <ul class="videos__container">
         <?php foreach($videoList as $video): ?>
-        <?php
-            if (!str_starts_with($video["url"], 'http')){
-                $video['url'] = 'https://www.youtube.com/embed/UBAX-13g8OM?si=TGB7L_c72TsdJzVf';
-            }
-        ?>
         <li class="videos__item">
             <iframe width="100%" height="72%" src="<?= $video['url']?>"
                 title="YouTube video player" frameborder="0"
